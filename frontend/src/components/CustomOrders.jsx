@@ -93,8 +93,12 @@ export default function CustomOrders({ preset }) {
         ...form,
         quantity: form.quantity ? Number(form.quantity) : null,
       });
-      setResult(data);
-      toast.success("Enquiry received — we'll be in touch soon!");
+setResult({
+  ...data,
+  name: form.name,
+  id: data.id || crypto.randomUUID(),
+});
+toast.success("Enquiry received — we'll be in touch soon!");
     } catch (err) {
       toast.error("Something went wrong. Please try again or reach us on WhatsApp.");
     } finally {
