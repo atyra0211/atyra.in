@@ -5,7 +5,7 @@ import { Check, ImagePlus, Info, Loader2, MessageCircle, Palette, X } from "luci
 import { Reveal, SectionHeading } from "@/components/Reveal";
 import { BUDGET_OPTIONS, OCCASION_OPTIONS, PRODUCT_TYPES, waLink } from "@/config/site";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = `${process.env.REACT_APP_BACKEND_URL || "https://atyra-backend.onrender.com"}/api`;
 
 const INITIAL = {
   name: "",
