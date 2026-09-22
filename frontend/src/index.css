@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 36 44% 96%;
+    --foreground: 20 15% 16%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 15% 16%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 15% 16%;
+    --primary: 15 48% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 44% 92%;
+    --secondary-foreground: 20 15% 16%;
+    --muted: 36 33% 92%;
+    --muted-foreground: 24 12% 45%;
+    --accent: 22 57% 91%;
+    --accent-foreground: 20 15% 16%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 36 27% 86%;
+    --input: 36 27% 86%;
+    --ring: 15 48% 59%;
+    --chart-1: 15 48% 59%;
+    --chart-2: 145 25% 76%;
+    --chart-3: 262 29% 82%;
+    --chart-4: 33 55% 64%;
+    --chart-5: 353 26% 81%;
+    --radius: 1rem;
+  }
+  .dark {
+    --background: 20 15% 10%;
+    --foreground: 36 44% 96%;
+    --card: 20 15% 12%;
+    --card-foreground: 36 44% 96%;
+    --popover: 20 15% 12%;
+    --popover-foreground: 36 44% 96%;
+    --primary: 15 48% 59%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 20 15% 18%;
+    --secondary-foreground: 36 44% 96%;
+    --muted: 20 15% 18%;
+    --muted-foreground: 24 8% 60%;
+    --accent: 20 15% 18%;
+    --accent-foreground: 36 44% 96%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 15% 22%;
+    --input: 20 15% 22%;
+    --ring: 15 48% 59%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  ::selection {
+    background: #C87D67;
+    color: #FAF7F2;
+  }
+}
+
+/* Subtle handmade paper grain over the whole experience */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Masked reveal helper for the kinetic hero */
+.line-mask {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-spin-slow,
+  .animate-float {
+    animation: none;
+  }
+}

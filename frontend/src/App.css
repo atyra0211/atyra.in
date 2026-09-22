@@ -1,0 +1,10 @@
+/* Atyra — component styles live in Tailwind; this file carries the few global niceties */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}

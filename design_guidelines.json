@@ -1,0 +1,305 @@
+{
+  "brand": {
+    "name": "Atyra",
+    "tagline": "Handmade. Customised. Made with Love.",
+    "subheading": "Bespoke handcrafted gifts, crochet creations, artisanal hampers, and heartwarming decorative keepsakes made to cherish forever.",
+    "emotional_archetype": "Organic & Earthy + Pastel & Soft (Cute + Elegant + Artistic + Handmade + Premium + Personal)"
+  },
+  "colors": {
+    "background_primary": "#FAF7F2",
+    "background_secondary": "#FFFDF9",
+    "background_tertiary": "#F5EFE6",
+    "text_primary": "#2D2623",
+    "text_secondary": "#6B5E57",
+    "text_muted": "#9A8C83",
+    "accent_beige": "#E8DFD8",
+    "accent_blush": "#F7E1D7",
+    "accent_rose": "#E8B4B8",
+    "accent_lavender": "#E5DBEC",
+    "accent_sage": "#D8E2DC",
+    "accent_terracotta": "#C87D67",
+    "accent_gold": "#D4A373",
+    "border_subtle": "#E5DDD3",
+    "card_bg": "#FFFFFF",
+    "whatsapp_green": "#25D366"
+  },
+  "typography": {
+    "heading_font": "Playfair Display, Cormorant Garamond, serif",
+    "body_font": "Outfit, Manrope, sans-serif",
+    "heading_styles": {
+      "h1": "font-serif text-4xl sm:text-5xl lg:text-6xl font-medium tracking-tight text-[#2D2623] leading-tight",
+      "h2": "font-serif text-2xl sm:text-3xl lg:text-4xl font-medium tracking-tight text-[#2D2623]",
+      "h3": "font-serif text-xl sm:text-2xl font-medium text-[#2D2623]",
+      "h4": "font-sans text-lg sm:text-xl font-semibold text-[#2D2623]"
+    },
+    "body_styles": {
+      "lead": "font-sans text-lg sm:text-xl text-[#6B5E57] leading-relaxed",
+      "default": "font-sans text-base text-[#6B5E57] leading-relaxed",
+      "small": "font-sans text-sm text-[#9A8C83]",
+      "overline": "font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[#C87D67]"
+    }
+  },
+  "layout_and_spacing": {
+    "container_padding": "px-4 sm:px-8 lg:px-16 max-w-7xl mx-auto",
+    "section_spacing": "py-16 sm:py-24",
+    "card_radius": "rounded-3xl",
+    "button_radius": "rounded-full",
+    "shadow_style": "shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(200,125,103,0.12)] transition-all duration-300"
+  },
+  "image_urls": {
+    "hero_image": "https://images.pexels.com/photos/17864123/pexels-photo-17864123.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "about_artisan": "https://images.unsplash.com/photo-1771523350538-29baf74f710c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w0NjAzNDR8MHwxfHNlYXJjaHwyfHxjcmFmdGluZyUyMGFydGlzYW4lMjBoYW5kcyUyMGNlcmFtaWMlMjB5YXJuJTIwZ2lmdCUyMGJveHxlbnwwfHx8fDE3OTAwNjgxNjF8MA&ixlib=rb-4.1.0&q=85",
+    "about_workshop": "https://images.pexels.com/photos/7679739/pexels-photo-7679739.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "categories": [
+      {
+        "id": "hampers",
+        "title": "Customised Hampers",
+        "description": "Curated gift boxes crafted for celebrations, filled with hand-selected treasures and personal touches.",
+        "image_url": "https://images.unsplash.com/photo-1664849173063-8d8244ac3933?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHozfHxjdXN0b20lMjBnaWZ0JTIwaGFtcGVyJTIwYm91cXVldCUyMGhhbmRtYWRlJTIwYWNjZXNzb3JpZXN8ZW58MHx8fHwxNzkwMDY4MTU0fDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "id": "crochet",
+        "title": "Crochet Wonders",
+        "description": "Hand-knit floral stems, plush keepsakes, wearable art, and soft home decor pieces.",
+        "image_url": "https://images.pexels.com/photos/37540169/pexels-photo-37540169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "id": "accessories",
+        "title": "Handmade Accessories",
+        "description": "Bespoke beaded jewelry, embroidered hair accessories, keychains, and delicate tote charms.",
+        "image_url": "https://images.unsplash.com/photo-1726197847318-e4bd469af258?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwyfHxoYW5kbWFkZSUyMGNyYWZ0cyUyMGNyb2NoZXQlMjBwb3R0ZXJ5JTIwcGFzdGVsJTIwYWVzdGhldGljfGVufDB8fHx8MTc5MDA2ODE1NHww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "id": "bouquets",
+        "title": "Floral & Crochet Bouquets",
+        "description": "Forever-blooming everlasting flower arrangements tied with silk ribbons.",
+        "image_url": "https://images.unsplash.com/photo-1615670289616-0ab01183ee64?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHxfHxjdXN0b20lMjBnaWZ0JTIwaGFtcGVyJTIwYm91cXVldCUyMGhhbmRtYWRlJTIwYWNjZXNzb3JpZXN8ZW58MHx8fHwxNzkwMDY4MTU0fDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "id": "decorative",
+        "title": "Decorative Creations",
+        "description": "Artisanal scented candles, wall hangings, dreamcatchers, and festive decor accents.",
+        "image_url": "https://images.unsplash.com/photo-1701372764803-6ca0f1c6f346?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwzfHxoYW5kbWFkZSUyMGNyYWZ0cyUyMGNyb2NoZXQlMjBwb3R0ZXJ5JTIwcGFzdGVsJTIwYWVzdGhldGljfGVufDB8fHx8MTc5MDA2ODE1NHww&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "id": "personalised",
+        "title": "Personalised Keepsakes",
+        "description": "Custom engraved wooden plaques, resin photo frames, and monogrammed memory boxes.",
+        "image_url": "https://images.pexels.com/photos/7679676/pexels-photo-7679676.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      }
+    ],
+    "featured_products": [
+      {
+        "id": "prod-1",
+        "name": "Pastel Meadow Crochet Bouquet",
+        "category": "Bouquets",
+        "price_tag": "Custom Quote",
+        "estimated_price": "$45 - $75",
+        "image_url": "https://images.pexels.com/photos/17864123/pexels-photo-17864123.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Everlasting hand-stitched crochet tulips, daisies, and lavender stems wrapped in recycled kraft paper."
+      },
+      {
+        "id": "prod-2",
+        "name": "Luxe Bridal Pamper Hamper",
+        "category": "Hampers",
+        "price_tag": "Price on Request",
+        "estimated_price": "$95 - $160",
+        "image_url": "https://images.unsplash.com/photo-1664849173063-8d8244ac3933?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHozfHxjdXN0b20lMjBnaWZ0JTIwaGFtcGVyJTIwYm91cXVldCUyMGhhbmRtYWRlJTIwYWNjZXNzb3JpZXN8ZW58MHx8fHwxNzkwMDY4MTU0fDA&ixlib=rb-4.1.0&q=85",
+        "description": "Includes hand-poured soy candle, satin eye mask, customised mug, and dried floral posy."
+      },
+      {
+        "id": "prod-3",
+        "name": "Vintage Bloom Mini Tote",
+        "category": "Accessories",
+        "price_tag": "Price on Request",
+        "estimated_price": "$38 - $55",
+        "image_url": "https://images.unsplash.com/photo-1726197847318-e4bd469af258?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwyfHxoYW5kbWFkZSUyMGNyYWZ0cyUyMGNyb2NoZXQlMjBwb3R0ZXJ5JTIwcGFzdGVsJTIwYWVzdGhldGljfGVufDB8fHx8MTc5MDA2ODE1NHww&ixlib=rb-4.1.0&q=85",
+        "description": "Cute woven crochet handbag with pastel floral embroidery and antique brass button closure."
+      },
+      {
+        "id": "prod-4",
+        "name": "Hand-painted Botanical Ceramics",
+        "category": "Decorative Creations",
+        "price_tag": "Custom Quote",
+        "estimated_price": "$30 - $60",
+        "image_url": "https://images.unsplash.com/photo-1569349550027-e4bbf91b45bd?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHxfHxoYW5kbWFkZSUyMGNyYWZ0cyUyMGNyb2NoZXQlMjBwb3R0ZXJ5JTIwcGFzdGVsJTIwYWVzdGhldGljfGVufDB8fHx8MTc5MDA2ODE1NHww&ixlib=rb-4.1.0&q=85",
+        "description": "Artisanal ceramic mugs and trinket dishes featuring delicate hand-painted pastel motifs."
+      },
+      {
+        "id": "prod-5",
+        "name": "Ferrero & Rose Celebration Tower",
+        "category": "Hampers",
+        "price_tag": "Custom Quote",
+        "estimated_price": "$70 - $120",
+        "image_url": "https://images.pexels.com/photos/30727980/pexels-photo-30727980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Stunning luxury gift arrangement with gold foil chocolates, fresh/crochet roses, and satin ribbon."
+      },
+      {
+        "id": "prod-6",
+        "name": "Wildflower Embroidered Fabric Art",
+        "category": "Personalised Keepsakes",
+        "price_tag": "Price on Request",
+        "estimated_price": "$40 - $80",
+        "image_url": "https://images.pexels.com/photos/37540169/pexels-photo-37540169.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Custom hand-embroidered wooden hoop framed with your choice of initials or anniversary date."
+      },
+      {
+        "id": "prod-7",
+        "name": "Self-Care Organic Beauty Crate",
+        "category": "Hampers",
+        "price_tag": "Custom Quote",
+        "estimated_price": "$65 - $110",
+        "image_url": "https://images.pexels.com/photos/32498681/pexels-photo-32498681.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Wooden keepsake crate packed with handmade artisan soaps, bath salts, and body oils."
+      },
+      {
+        "id": "prod-8",
+        "name": "Charming Beaded Charm Bracelet Set",
+        "category": "Accessories",
+        "price_tag": "Price on Request",
+        "estimated_price": "$25 - $45",
+        "image_url": "https://images.unsplash.com/photo-1707863080996-69d306aa5689?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHw0fHxoYW5kbWFkZSUyMGNyYWZ0cyUyMGNyb2NoZXQlMjBwb3R0ZXJ5JTIwcGFzdGVsJTIwYWVzdGhldGljfGVufDB8fHx8MTc5MDA2ODE1NHww&ixlib=rb-4.1.0&q=85",
+        "description": "Stackable pastel beaded bracelets adorned with freshwater pearls and gold-plated charms."
+      }
+    ],
+    "gallery": [
+      {
+        "url": "https://images.pexels.com/photos/17864123/pexels-photo-17864123.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "Crochet",
+        "title": "Sunlit Crochet Bouquet"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1664849173063-8d8244ac3933?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHozfHxjdXN0b20lMjBnaWZ0JTIwaGFtcGVyJTIwYm91cXVldCUyMGhhbmRtYWRlJTIwYWNjZXNzb3JpZXN8ZW58MHx8fHwxNzkwMDY4MTU0fDA&ixlib=rb-4.1.0&q=85",
+        "category": "Hampers",
+        "title": "Lavish Lavender Gift Box"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1615670289616-0ab01183ee64?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHxfHxjdXN0b20lMjBnaWZ0JTIwaGFtcGVyJTIwYm91cXVldCUyMGhhbmRtYWRlJTIwYWNjZXNzb3JpZXN8ZW58MHx8fHwxNzkwMDY4MTU0fDA&ixlib=rb-4.1.0&q=85",
+        "category": "Bouquets",
+        "title": "Blush & Ivory Floral Bundle"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1726197847318-e4bd469af258?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwyfHxoYW5kbWFkZSUyMGNyYWZ0cyUyMGNyb2NoZXQlMjBwb3R0ZXJ5JTIwcGFzdGVsJTIwYWVzdGhldGljfGVufDB8fHx8MTc5MDA2ODE1NHww&ixlib=rb-4.1.0&q=85",
+        "category": "Accessories",
+        "title": "Handcrafted Mini Tote Bag"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1701372764803-6ca0f1c6f346?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzZ8MHwxfHNlYXJjaHwzfHxoYW5kbWFkZSUyMGNyYWZ0cyUyMGNyb2NoZXQlMjBwb3R0ZXJ5JTIwcGFzdGVsJTIwYWVzdGhldGljfGVufDB8fHx8MTc5MDA2ODE1NHww&ixlib=rb-4.1.0&q=85",
+        "category": "Custom Gifts",
+        "title": "Pastel Ceramic Vases"
+      },
+      {
+        "url": "https://images.pexels.com/photos/30727980/pexels-photo-30727980.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "category": "Hampers",
+        "title": "Chocolate & Floral Tower"
+      }
+    ]
+  },
+  "sections_breakdown": [
+    {
+      "section_id": "navbar",
+      "name": "Sticky Navbar",
+      "spec": "Sticky top-0 z-50 backdrop-blur-md bg-[#FAF7F2]/90 border-b border-[#E5DDD3]. Features Atyra brand logo with a floral yarn mark, navigation links (Creations, Categories, Story, Why Us, Custom Order, Gallery, Contact), desktop CTA button 'Custom Order' in primary terracotta tone, and mobile drawer menu."
+    },
+    {
+      "section_id": "hero",
+      "name": "Hero Section",
+      "spec": "Generous warm background with floating pastel badge 'Crafted by Hand • Made with Heart'. Large elegant serif title 'Handmade. Customised. Made with Love.' Split screen with two CTA buttons ('Explore Creations' & 'Request Custom Order'), trust indicators ('100% Bespoke Crafting', 'Worldwide Shipping', '4.9★ Rating from 500+ Happy Hearts'), and hero product showcase frame."
+    },
+    {
+      "section_id": "intro_banner",
+      "name": "Short Brand Philosophy Intro",
+      "spec": "Centred high-impact statement on a soft sage/blush highlight box: 'At Atyra, every loop of yarn, every ribbon wrap, and every hand-poured detail is imbued with warmth and intention.'"
+    },
+    {
+      "section_id": "categories",
+      "name": "Explore Our Creations",
+      "spec": "6 category cards grid with soft hover image zoom, soft pastel tags, title, description, and 'Browse Collection' link."
+    },
+    {
+      "section_id": "featured_products",
+      "name": "Featured Creations",
+      "spec": "8-product grid with price tags ('Custom Quote' / 'Price on Request'), interactive image quick view modal, filter buttons, and instant 'Enquire / Customise' trigger that auto-scrolls or pre-fills the Enquiry Form."
+    },
+    {
+      "section_id": "about_atyra",
+      "name": "About Atyra Storytelling",
+      "spec": "Long storytelling section detailing the artisan journey, artisan hands shaping gifts, commitment to slow crafts, ending with the signature quote: 'Made by hand. Created for you.'"
+    },
+    {
+      "section_id": "why_atyra",
+      "name": "Why Choose Atyra",
+      "spec": "6 feature cards with delicate line icons: 100% Handcrafted, Bespoke Customisation, Eco-conscious Packaging, Thoughtful Gifting, Artisanal Quality, Heartfelt Personalisation."
+    },
+    {
+      "section_id": "custom_orders",
+      "name": "Custom Orders Enquiry Form",
+      "spec": "Comprehensive interactive enquiry form with inputs: Name, Email, WhatsApp number, Occasion, Product Type, Colour/Theme preference, Budget Range, Quantity, Preferred Delivery Date, Special Details/Instructions, and an interactive Inspiration Image upload container with file preview simulation. On submit, shows a beautiful summary drawer/modal with instant WhatsApp pre-formatted message generation."
+    },
+    {
+      "section_id": "occasions",
+      "name": "Occasions Ribbon",
+      "spec": "8 interactive occasion chips (Birthdays, Weddings, Anniversaries, Baby Showers, Corporate Milestones, Festivals, Graduation, Self-Care Treats) with clickable filter effect and CTA button 'Find Gifts for Your Occasion'."
+    },
+    {
+      "section_id": "gallery",
+      "name": "Filterable Gallery Grid",
+      "spec": "Masonry/grid layout with category tabs (All, Hampers, Crochet, Accessories, Bouquets, Custom Gifts) and image lightbox popover."
+    },
+    {
+      "section_id": "instagram",
+      "name": "Instagram Live Showcase",
+      "spec": "Header 'See What We're Creating' (@atyra.crafts) with 4-card grid showing behind-the-scenes craft reels/photos and hover stats."
+    },
+    {
+      "section_id": "contact",
+      "name": "Contact & WhatsApp Studio",
+      "spec": "Warm aesthetic container 'Let's Create Something Beautiful' featuring studio address, response time guarantee, email, and a high-visibility green WhatsApp chat button linking directly to WhatsApp API."
+    },
+    {
+      "section_id": "footer",
+      "name": "Premium Boutique Footer",
+      "spec": "Deep warm earthy footer with newsletter subscription ('Join the Atyra Love Letter'), quick navigation, craft care guide link, social icons, and copyright note."
+    }
+  ],
+  "testing_attributes": {
+    "data_testid_rules": "All interactive elements (buttons, links, inputs, filters, modals) MUST include kebab-case data-testid attributes.",
+    "required_test_ids": [
+      "navbar-brand-logo",
+      "navbar-custom-order-button",
+      "hero-explore-button",
+      "hero-custom-order-button",
+      "category-card-hampers",
+      "category-card-crochet",
+      "featured-product-card-1",
+      "product-enquire-button-prod-1",
+      "custom-order-form",
+      "input-full-name",
+      "input-email",
+      "input-whatsapp",
+      "select-occasion",
+      "select-product-type",
+      "input-colour-theme",
+      "input-budget",
+      "input-quantity",
+      "input-delivery-date",
+      "textarea-details",
+      "file-upload-inspiration",
+      "submit-custom-order-button",
+      "gallery-filter-all",
+      "gallery-filter-crochet",
+      "whatsapp-chat-button",
+      "footer-newsletter-input",
+      "footer-newsletter-submit"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Build the frontend using React in JavaScript (.js / .jsx files). Ensure code is clean, modular, and fully functional.",
+    "Do NOT use pure transparent backgrounds for navbar or popovers. Use backdrop-blur-md bg-[#FAF7F2]/90 or bg-white.",
+    "Follow the exact colour palette: Soft cream/off-white background (#FAF7F2 / #FFFDF9), warm beige (#E8DFD8), blush pink (#F7E1D7), terracotta accents (#C87D67), sage (#D8E2DC), and lavender (#E5DBEC).",
+    "Use Playfair Display or Cormorant Garamond for headings and Outfit or Manrope for body text via Google Fonts.",
+    "Ensure the Custom Order form has real state handling, form validation, image upload dropzone UI simulation, and triggers a modal summary + WhatsApp deep link option.",
+    "Add interactive toast feedback using Sonner when user submits custom order, copies contact info, or subscribes to newsletter.",
+    "Ensure responsive layout for all screen sizes from mobile (375px) to desktop (1440px)."
+  ]
+}
