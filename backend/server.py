@@ -1,45 +1,30 @@
 from fastapi import FastAPI, APIRouter
-from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient
-import os
-import logging
-from pathlib import Path
-from typing import Optional, List, Annotated
+from pydantic import BaseModel, EmailStr
+from typing import Optional
 from datetime import datetime, timezone
-from pydantic import BaseModel, Field, ConfigDict, BeforeValidator, EmailStr
-from bson import ObjectId
+import os
+import requests
+import logging
+import base64
 
-ROOT_DIR = Path(__file__).parent
-load_dotenv(ROOT_DIR / '.env')
-
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
 
 app = FastAPI(title="Atyra API")
+
 api_router = APIRouter(prefix="/api")
 
-PyObjectId = Annotated[str, BeforeValidator(str)]
+
+# ---------------------------------------------------------
+# Configuration
+# ---------------------------------------------------------
+
+GOOGLE_APPS_SCRIPT_URL = os.environ.get("GOOGLE_APPS_SCRIPT_URL", "")
+ATYRA_ENQUIRY_TOKEN = os.environ.get("ATYRA_ENQUIRY_TOKEN", "")
 
 
-class BaseDocument(BaseModel):
-    model_config = ConfigDict(populate_by_name=True, extra="ignore")
-    id: PyObjectId = Field(
-        default_factory=lambda: str(ObjectId()),
-        validation_alias="_id",
-        serialization_alias="id",
-    )
-
-    @classmethod
-    def from_mongo(cls, doc):
-        if not doc:
-            return None
-        return cls.model_validate(doc)
-
-    def to_mongo(self):
-        return self.model_dump(by_alias=True, exclude_none=True)
-
+# ---------------------------------------------------------
+# Enquiry model
+# ---------------------------------------------------------
 
 class EnquiryCreate(BaseModel):
     name: str
@@ -55,46 +40,139 @@ class EnquiryCreate(BaseModel):
     inspiration_image: Optional[str] = None
 
 
-class Enquiry(EnquiryCreate, BaseDocument):
-    model_config = ConfigDict(populate_by_name=True, extra="ignore")
-    created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
-
+# ---------------------------------------------------------
+# Health check
+# ---------------------------------------------------------
 
 @api_router.get("/")
 async def root():
     return {"message": "Atyra API is running"}
 
 
-@api_router.post("/enquiries", response_model=Enquiry)
+# ---------------------------------------------------------
+# Submit enquiry
+# ---------------------------------------------------------
+
+@api_router.post("/enquiries")
 async def create_enquiry(input: EnquiryCreate):
-    enquiry = Enquiry(**input.model_dump())
-    await db.enquiries.insert_one(enquiry.to_mongo())
-    return enquiry
 
+    if not GOOGLE_APPS_SCRIPT_URL:
+        return {
+            "success": False,
+            "message": "Google Apps Script URL is not configured."
+        }
 
-@api_router.get("/enquiries", response_model=List[Enquiry])
-async def list_enquiries():
-    docs = await db.enquiries.find().sort("created_at", -1).to_list(200)
-    return [Enquiry.from_mongo(d) for d in docs]
+    if not ATYRA_ENQUIRY_TOKEN:
+        return {
+            "success": False,
+            "message": "Enquiry security token is not configured."
+        }
+
+    image_data = None
+
+    # Handle uploaded inspiration image.
+    # The frontend may send the image as a data URL.
+    if input.inspiration_image:
+        image_value = input.inspiration_image
+
+        if image_value.startswith("data:"):
+            try:
+                header, encoded_data = image_value.split(",", 1)
+
+                mime_type = header.split(";")[0].replace(
+                    "data:", ""
+                )
+
+                image_data = {
+                    "base64": encoded_data,
+                    "mimeType": mime_type,
+                    "fileName": "atyra-inspiration-image"
+                }
+            except Exception:
+                logging.exception("Could not process inspiration image.")
+
+    payload = {
+        "token": ATYRA_ENQUIRY_TOKEN,
+
+        "name": input.name,
+        "email": input.email,
+        "whatsappNumber": input.whatsapp,
+        "occasion": input.occasion,
+        "productType": input.product_type,
+        "preferredColourTheme": input.color_theme,
+        "approximateBudget": input.budget,
+        "quantity": input.quantity,
+        "preferredDeliveryDate": input.delivery_date,
+        "customisationDetails": input.details,
+
+        "inspirationImage": image_data
+    }
+
+    try:
+        response = requests.post(
+            GOOGLE_APPS_SCRIPT_URL,
+            json=payload,
+            timeout=30
+        )
+
+        response.raise_for_status()
+
+        result = response.json()
+
+        if not result.get("success"):
+            logging.error(
+                "Google Apps Script rejected enquiry: %s",
+                result
+            )
+
+            return {
+                "success": False,
+                "message": "Could not save enquiry."
+            }
+
+        return {
+            "success": True,
+            "message": "Enquiry saved successfully.",
+            "created_at": datetime.now(timezone.utc).isoformat()
+        }
+
+    except Exception as error:
+        logging.exception("Failed to send enquiry to Google Apps Script.")
+
+        return {
+            "success": False,
+            "message": "Could not save enquiry."
+        }
 
 
 app.include_router(api_router)
 
+
+# ---------------------------------------------------------
+# CORS
+# ---------------------------------------------------------
+
+cors_origins = os.environ.get(
+    "CORS_ORIGINS",
+    "https://atyra.in,https://www.atyra.in"
+).split(",")
+
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=cors_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
+
+# ---------------------------------------------------------
+# Logging
+# ---------------------------------------------------------
+
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
+
 logger = logging.getLogger(__name__)
-
-
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    client.close()
